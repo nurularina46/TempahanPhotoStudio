@@ -16,6 +16,9 @@
         android:theme="@style/Theme.TempahanPhotoStudio"
         tools:targetApi="31">
         <activity
+            android:name=".PackageDetails"
+            android:exported="false" />
+        <activity
             android:name=".item_sub_package"
             android:exported="false" />
         <activity

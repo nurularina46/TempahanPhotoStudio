@@ -1,6 +1,7 @@
 package com.kelasandroidappsirhafizee.tempahanphotostudio;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class PhotographyPackageActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     PackageAdapter adapter;
     PackageModel model;
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
