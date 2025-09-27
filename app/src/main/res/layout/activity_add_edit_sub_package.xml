@@ -6,12 +6,18 @@
     android:padding="16dp"
     android:background="#D9C3AD">
 
-    <EditText
-        android:id="@+id/edtSubPackageClass"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Sub-package Class"
-        android:inputType="text"
+        android:text="Package Class"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerSubPackageClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"/>
 
     <EditText
@@ -26,17 +32,56 @@
         android:id="@+id/edtSubPackageDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Details"
+        android:hint="Details (e.g., 1 Event 1 Video | Akad Nikah / Sanding...)"
         android:inputType="textMultiLine"
         android:minLines="3"
+        android:gravity="top"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/edtSubPackageDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description (e.g., Basic wedding videography package)"
+        android:inputType="textMultiLine"
+        android:minLines="2"
         android:gravity="top"
         android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/btnSaveSubPackage"
+        android:id="@+id/btnTestConnection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Sub-package"
-        android:backgroundTint="@color/design_default_color_primary"
-        android:textColor="@android:color/white"/>
+        android:text="Test Database Connection"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnSaveSubPackage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnDeleteSubPackage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Videography Pricing"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+        <!-- Pricing Table Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Your Videography Package"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Horizontal ScrollView for Pricing Cards -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <!-- PV 1 Package Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pv1_card"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PV 1"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#2196F3"
+                            android:gravity="center"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Regular Package"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RM 1,200"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF5722"
+                            android:gravity="center"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 Event 1 Video\nAkad Nikah / Sanding (1 Day 1 Event)\n6-7 Hours Per Day\n1 x Full Showreel (Akad / Sanding)\n4-6 Minute Highlight Video\n1 x Exclusive Pendrive 16 GB &amp; Case"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:lineSpacingExtra="2dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Select Package"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/btn_primary"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- PV 2 Package Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pv2_card"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PV 2"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#4CAF50"
+                            android:gravity="center"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Advance Package"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RM 1,800"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF5722"
+                            android:gravity="center"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 Event 1 Video\nAkad Nikah / Sanding (1 Day 1 Event)\n6-7 Hours Per Day\n1 x Full Showreel (Akad / Sanding)\n4-6 Minute Highlight Video\n1 x Exclusive Pendrive 16 GB &amp; Case\nDrone 1/Per Day RM500"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:lineSpacingExtra="2dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Select Package"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/btn_primary"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- PV 3 Package Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pv3_card"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PV 3"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF9800"
+                            android:gravity="center"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Package"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RM 2,500"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF5722"
+                            android:gravity="center"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 Event 1 Video\nAkad Nikah / Sanding (1 Day 1 Event)\n6-7 Hours Per Day\n1 x Full Showreel (Akad / Sanding)\n4-6 Minute Highlight Video\n1 x Exclusive Pendrive 16 GB &amp; Case\nDrone 1/Per Day RM500\n+1 Videographer Per Day RM500"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:lineSpacingExtra="2dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Select Package"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/btn_primary"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- PV 4 Package Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pv4_card"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PV 4"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#9C27B0"
+                            android:gravity="center"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ultimate Package"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RM 3,200"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF5722"
+                            android:gravity="center"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 Event 1 Video\nAkad Nikah / Sanding (1 Day 1 Event)\n6-7 Hours Per Day\n1 x Full Showreel (Akad / Sanding)\n4-6 Minute Highlight Video\n1 x Exclusive Pendrive 16 GB &amp; Case\nDrone 1/Per Day RM500\n+1 Videographer Per Day RM500\nRaw Footage + 64GB RM150"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:lineSpacingExtra="2dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Select Package"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/btn_primary"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- PV 5 Package Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pv5_card"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PV 5"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="#E91E63"
+                            android:gravity="center"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Luxury Package"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333"
+                            android:gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RM 4,000"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#FF5722"
+                            android:gravity="center"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1 Event 1 Video\nAkad Nikah / Sanding (1 Day 1 Event)\n6-7 Hours Per Day\n1 x Full Showreel (Akad / Sanding)\n4-6 Minute Highlight Video\n1 x Exclusive Pendrive 16 GB &amp; Case\nDrone 1/Per Day RM500\n+1 Videographer Per Day RM500\nRaw Footage + 64GB RM150\nMakeup Per Hour RM100\nTermasuk Kos Pengangkutan\nPenginapan"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:lineSpacingExtra="2dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Select Package"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/btn_primary"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Additional Information -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Package Information"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• All packages include professional equipment\n• Raw footage provided upon request\n• 30-day revision period included\n• Free consultation before booking\n• Flexible payment options available\n• Custom packages available upon request"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -34,6 +34,18 @@
             android:name=".PhotographyPackageActivity"
             android:exported="false" />
         <activity
+            android:name=".VideographyPackageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VideographyPricingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubPackageSingleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddVideographySubPackageActivity"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity

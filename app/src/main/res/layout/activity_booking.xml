@@ -41,8 +41,7 @@
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/etDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etDate"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.777" />
 
@@ -56,9 +55,8 @@
         android:inputType="none"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/etTime"
-        app:layout_constraintEnd_toEndOf="@+id/etTime"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etTime"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerPakej"
+        app:layout_constraintStart_toStartOf="@+id/spinnerPakej"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.861" />
 
@@ -73,9 +71,8 @@
         android:inputType="none"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSendOrder"
-        app:layout_constraintEnd_toEndOf="@+id/btnSendOrder"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnSendOrder"
+        app:layout_constraintEnd_toEndOf="@+id/etDate"
+        app:layout_constraintStart_toStartOf="@+id/etDate"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 

@@ -32,8 +32,8 @@ public class SubPackageAdapter extends RecyclerView.Adapter<SubPackageAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SubPackageModel subPackage = subPackageList.get(position);
-        holder.tvSubPackageCode.setText(subPackage.getCode());
-        holder.tvSubPackageName.setText(subPackage.getName());
+        holder.tvSubPackageCode.setText("SUB-" + String.format("%03d", subPackage.getId()));
+        holder.tvSubPackageName.setText(subPackage.getPackageClass());
 
         holder.btnDetails.setOnClickListener(v -> listener.onDetailsClick(subPackage));
     }

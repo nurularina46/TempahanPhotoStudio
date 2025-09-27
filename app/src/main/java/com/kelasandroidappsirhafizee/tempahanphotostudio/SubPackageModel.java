@@ -6,6 +6,8 @@ public class SubPackageModel {
     private String packageClass;
     private double price;
     private String details;
+    private String description;
+    private boolean isActive;
 
     // Constructor
     public SubPackageModel(int id, int packageId, String packageClass, double price, String details) {
@@ -14,6 +16,19 @@ public class SubPackageModel {
         this.packageClass = packageClass;
         this.price = price;
         this.details = details;
+        this.description = "";
+        this.isActive = true;
+    }
+
+    // Full Constructor
+    public SubPackageModel(int id, int packageId, String packageClass, double price, String details, String description, boolean isActive) {
+        this.id = id;
+        this.packageId = packageId;
+        this.packageClass = packageClass;
+        this.price = price;
+        this.details = details;
+        this.description = description;
+        this.isActive = isActive;
     }
 
     // Getter & Setter
@@ -55,5 +70,21 @@ public class SubPackageModel {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }
