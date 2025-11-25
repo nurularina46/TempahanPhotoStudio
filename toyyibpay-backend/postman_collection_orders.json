@@ -1,0 +1,296 @@
+{
+  "info": {
+    "name": "ToyyibPay Backend - Orders & Payments API",
+    "description": "Complete API collection untuk Orders dan Payments system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order (with Payment)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_name\": \"Ahmad bin Ali\",\n  \"user_email\": \"ahmad@example.com\",\n  \"user_phone\": \"0123456789\",\n  \"user_address\": \"123, Jalan ABC, Kuala Lumpur\",\n  \n  \"package_name\": \"Wedding Photography Premium\",\n  \"sub_package_name\": \"Full Day Coverage\",\n  \n  \"event_date\": \"2025-12-25\",\n  \"event_time\": \"14:00:00\",\n  \"event_location\": \"Dewan Serbaguna, Cyberjaya\",\n  \"event_type\": \"Wedding\",\n  \n  \"base_amount\": 1500.00,\n  \"discount_amount\": 100.00,\n  \"tax_amount\": 0,\n  \n  \"notes\": \"Please bring extra lenses\",\n  \"special_requests\": \"Need drone shots\",\n  \"terms_accepted\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/order/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "order", "create"]
+            },
+            "description": "Create order baru dengan automatic payment bill creation"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order by Order Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/order/{{order_number}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "order", "{{order_number}}"]
+            },
+            "description": "Get order details by order number"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/order/list?limit=50",
+              "host": ["{{base_url}}"],
+              "path": ["api", "order", "list"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "key": "status",
+                  "value": "Confirmed",
+                  "disabled": true
+                },
+                {
+                  "key": "payment_status",
+                  "value": "Paid",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all orders dengan optional filters"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Orders by User Email",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/order/user/{{user_email}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "order", "user", "{{user_email}}"]
+            },
+            "description": "Get all orders untuk user tertentu"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"In Progress\",\n  \"notes\": \"Photographer on the way to location\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/order/{{order_number}}/status",
+              "host": ["{{base_url}}"],
+              "path": ["api", "order", "{{order_number}}", "status"]
+            },
+            "description": "Update order status. Valid statuses: Pending, Confirmed, In Progress, Completed, Cancelled"
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"Customer requested cancellation due to date change\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/order/{{order_number}}/cancel",
+              "host": ["{{base_url}}"],
+              "path": ["api", "order", "{{order_number}}", "cancel"]
+            },
+            "description": "Cancel order dengan reason"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Create Payment (Standalone)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Siti Aminah\",\n  \"email\": \"siti@example.com\",\n  \"phone\": \"0198765432\",\n  \"amount\": 500.00,\n  \"description\": \"Payment for birthday photography\",\n  \n  \"package_name\": \"Birthday Photography Basic\",\n  \"event_date\": \"2025-12-15\",\n  \"event_time\": \"15:00:00\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/payment/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "payment", "create"]
+            },
+            "description": "Create payment sahaja tanpa order (backward compatibility)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Payment Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/payment/status/{{bill_code}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "payment", "status", "{{bill_code}}"]
+            },
+            "description": "Get payment status by bill code"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/payment/list?limit=50",
+              "host": ["{{base_url}}"],
+              "path": ["api", "payment", "list"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "key": "status",
+                  "value": "Paid",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all payments dengan optional filters"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ToyyibPay Callback",
+      "item": [
+        {
+          "name": "Payment Callback (Success)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"billCode\": \"abc123xyz\",\n  \"billpaymentStatus\": \"1\",\n  \"billpaymentAmount\": \"1400.00\",\n  \"billName\": \"Payment for Order\",\n  \"billEmail\": \"ahmad@example.com\",\n  \"billPhone\": \"0123456789\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/toyyibpay/callback",
+              "host": ["{{base_url}}"],
+              "path": ["api", "toyyibpay", "callback"]
+            },
+            "description": "Simulate ToyyibPay callback (payment success). Status: 1=Paid, 2=Failed, 3=Pending"
+          },
+          "response": []
+        },
+        {
+          "name": "Payment Callback (Failed)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"billCode\": \"abc123xyz\",\n  \"billpaymentStatus\": \"2\",\n  \"billpaymentAmount\": \"1400.00\",\n  \"billName\": \"Payment for Order\",\n  \"billEmail\": \"ahmad@example.com\",\n  \"billPhone\": \"0123456789\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/toyyibpay/callback",
+              "host": ["{{base_url}}"],
+              "path": ["api", "toyyibpay", "callback"]
+            },
+            "description": "Simulate ToyyibPay callback (payment failed)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        },
+        "description": "Check if server is running"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "order_number",
+      "value": "ORD-20251125-ABC123",
+      "type": "string"
+    },
+    {
+      "key": "bill_code",
+      "value": "abc123xyz",
+      "type": "string"
+    },
+    {
+      "key": "user_email",
+      "value": "ahmad@example.com",
+      "type": "string"
+    }
+  ]
+}
+

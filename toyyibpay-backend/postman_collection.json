@@ -1,0 +1,129 @@
+{
+  "info": {
+    "name": "ToyyibPay Backend API",
+    "description": "Complete API collection for ToyyibPay integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        },
+        "description": "Check if the server is running"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"0123456789\",\n  \"amount\": 25.00,\n  \"description\": \"Test payment\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/payment/create",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payment", "create"]
+        },
+        "description": "Create a new payment bill"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Payment Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payment/status/:billCode",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payment", "status", ":billCode"],
+          "variable": [
+            {
+              "key": "billCode",
+              "value": "abc123xyz",
+              "description": "Bill code from create payment response"
+            }
+          ]
+        },
+        "description": "Get payment status by bill code"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Payments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payment/list?status=PAID&limit=10",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payment", "list"],
+          "query": [
+            {
+              "key": "status",
+              "value": "PAID",
+              "description": "Filter by status: PENDING, PAID, FAILED"
+            },
+            {
+              "key": "limit",
+              "value": "10",
+              "description": "Limit number of results"
+            }
+          ]
+        },
+        "description": "Get all payments with optional filters"
+      },
+      "response": []
+    },
+    {
+      "name": "ToyyibPay Callback (Test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"billcode\": \"abc123xyz\",\n  \"order_id\": \"order123\",\n  \"status\": \"1\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/toyyibpay/callback",
+          "host": ["{{base_url}}"],
+          "path": ["api", "toyyibpay", "callback"]
+        },
+        "description": "Simulate ToyyibPay callback (status: 1=PAID, 2=FAILED, 3=PENDING)"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
+
